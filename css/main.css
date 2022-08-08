@@ -21,6 +21,7 @@
     :root{
         --site-font:"Roboto", "Arial", sans-serif;
         --primary-color:#ea625c;
+        --primary-hover-color:#c9514c;
         --three-text-color:#333;
         --seven-text-color:#777;
         --six-text-color:#666;
@@ -29,6 +30,7 @@
         --grey-color:#ddd;
         --white-text-color:#fff;
         --white-bg-color:#fff;
+        --eight-color:#888;
     }
 /* GLOBAL STYLES */
 *,
@@ -111,38 +113,35 @@ margin-right: 40px;
     color: var(--three-text-color);
     position: relative;
 
-
 }
-.sitenav__link ::after{
-    content: "";
-    width: 0%;
-    height: 3px;
-    background-color:var(--three-text-color);
-    bottom: -5px;
-    left: 50%;
-    transition: width 0.3s ease ;
-    position:absolute;
-    
-    
-}
-.sitenav__link:hover::after{
-    width: 50%;
-}
-.sitenav__link ::before{
+.sitenav__link::before{
     content: "";
     width: 0%;
     height: 3px;
     background-color: var(--three-text-color);
     bottom: -5px;
     right: 50%;
-    transition:width 0.3s ease ;
     position:absolute;
-
-    
+    transition:width 0.3s ease ;
 }
-.sitenav__link :hover::before{
+.sitenav__link:hover::before{
     width: 50%;
 }
+.sitenav__link::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color:var(--three-text-color);
+    bottom: -5px;
+    left: 50%;
+    transition:width 0.3s ease ;
+    position:absolute;
+    
+}
+.sitenav__link:hover::after{
+    width: 50%;
+}
+
 .header__form input {
     border: none;
     border-bottom: 1px solid var(--three-text-color);
@@ -157,4 +156,183 @@ margin-right: 40px;
 }
 .header__form input::placeholder{
     color: var(--six-text-color);
+}
+
+/* MAIN STYLES */
+.main {
+    flex-grow: 1;
+}
+/* CONTENT STYLES */
+.content {
+    width: 100%;
+    max-width: 490px;
+}
+.content__title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+    color: var(--black-text-color);
+}
+.content__text {
+    border-left: 3px solid var(--eight-color);
+    padding-left: 37px;
+    margin-bottom: 30px;
+
+}
+.content__btn {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: var(--white-text-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    padding: 12px 0;
+    display: inline-block;
+}
+.content__btn:hover{
+    background-color: var(--primary-hover-color);
+}
+.content__btn:active{
+    opacity: 0.6;
+    
+}
+/* INTRO */
+.intro {
+    padding-top: 140px;
+    padding-bottom: 185px;
+    background-image: url("../images/jpg/watches.jpg");
+    background-repeat: no-repeat;
+    background-size: 587px 565px;
+    background-position: calc(50% + 245px + 290px)bottom;
+    border-bottom: 2px solid var(--grey-color)
+
+}
+.intro__btn {
+    padding: 12px 38.5px;
+
+}
+/* FEATURES STYLES */
+.features {
+    padding: 70px 0;
+
+}
+.features__list {
+    list-style: none;
+    display: flex;
+}
+.features__item {
+    width: 100%;
+    max-width: 280px;
+}
+.features__item:not(:last-child){
+    margin-right: 20px;
+} 
+.features__item-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color: var(--black-text-color);
+    margin-bottom: 30px;
+
+}
+.features__item-text {
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--three-text-color);
+    margin-bottom: 20px;
+}
+.features__item-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--grey-color);
+    display: inline-block;
+    box-shadow:18px 0px 0px var(--grey-color), 
+    36px 0px 0px var(--grey-color);
+}
+.features__item-link {
+    font-size: 16px;
+    line-height: 25.6px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.features__item-link::before{
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary-color);
+    content: "";
+    margin-right: 10px;
+    transition: width 0.4s ease;
+}
+.features__item-link:hover::before{
+    width: 55px;
+
+}
+/* BRAND STYLES */
+.brand {
+    padding: 70px 0;
+}
+.brand__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.brand__btn {
+    padding: 12px 90px;
+}
+.brand__img {
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+
+}
+/* MAIN BOTTOM STYLES */
+.main-bottom {
+    padding: 240px 0;
+    background-image: url("../images/jpg/runners.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.main-bottom__container {
+    display: flex;
+    justify-content: flex-end;
+
+}
+.main-bottom__title {
+    color: var(--white-text-color);
+}
+.main-bottom__text {
+    border-left-color:var(--white-text-color);
+    color: var(--white-text-color);
+}
+.main-bottom__btn {
+padding: 12px 46px;
+}
+
+
+/* BACKGROUND RETINE DISPLAY */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+    .intro {
+        background-image: url("../images/jpg/watches@2x.jpg");
+    }
+    .main-bottom {
+        background-image: url("../images/jpg/runners@2x.jpg"); 
+    }
+
 }
